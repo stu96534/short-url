@@ -7,7 +7,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 const app = express()
 const port = 3000
 
-app.engine('hbs', exphbs({ defaultLayout: main, extname: 'hbs' }))
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }))
 app.set('view engine', 'hbs')
 
 const db = mongoose.connection
@@ -21,7 +21,7 @@ db.once('open', () => {
 })
 
 app.get('/', (req, res) => {
-
+  res.render('index')
 })
 
 app.listen(port, () => {
