@@ -21,7 +21,7 @@ db.once('open', () => {
 })
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('new')
 })
 
 app.listen(port, () => {
