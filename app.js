@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
+const getNumber = require('./routes/modules/getNumber')
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -21,6 +22,7 @@ db.once('open', () => {
 })
 
 app.get('/', (req, res) => {
+  console.log(getNumber(5))
   res.render('new')
 })
 
