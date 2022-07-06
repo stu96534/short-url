@@ -3,7 +3,7 @@ const route = express()
 const getNumber = require('./getNumber')
 const shortURL = require('../../models/short_url')
 
-
+//setting new page
 route.get('/:RanderNumber/new', (req, res) => {
   let RanderNumber = req.params.RanderNumber
   return shortURL.find()
@@ -17,6 +17,7 @@ route.get('/:RanderNumber/new', (req, res) => {
     .catch(error => console.error(error))
 })
 
+// add url
 route.post('/', (req, res) => {
   let RanderNumber = getNumber(5)
   let originalURL = req.body.URL
@@ -36,13 +37,13 @@ route.post('/', (req, res) => {
 
 })
 
+//connect url
 route.get('/:RanderNumber', (req, res) => {
   let RanderNumber = req.params.RanderNumber
-
-  shortURL.find()
+  return shortURL.find()
     .lean()
-    .then(shortURL => {
-      const shorturl = shortURL.find(list => {
+    .then(shortURLlist => {
+      const shorturl = shortURLlist.find(list => {
         return list.RanderNumber.includes(RanderNumber)
       })
 
