@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const app = express()
 require('./config/mongoose')
 const route = require('./routes/index')
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }))
 app.set('view engine', 'hbs')
@@ -19,5 +19,5 @@ app.use(route)
 
 
 app.listen(port, () => {
-  console.log(`this is listening: http://${port}`)
+  console.log(`this is listening: http://localhost:${port}`)
 })
