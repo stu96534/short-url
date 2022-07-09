@@ -8,7 +8,7 @@
 ## 專案畫面
 
 ![首頁](https://github.com/stu96534/short-url/blob/main/public/首頁.png)
-![短網址](https://github.com/stu96534/short-url/blob/main/public/短網址.png)
+![短網址](https://github.com/stu96534/short-url/blob/main/public/網址.png)
 
 
 ## 安裝
