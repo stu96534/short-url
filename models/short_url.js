@@ -8,6 +8,10 @@ const shortSchema = new Schema({
   originalURL: {
     type: String,
     required: true
+  },
+  fault: {
+    type: Boolean,
+    default: false
   }
 })
 

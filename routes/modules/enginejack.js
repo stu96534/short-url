@@ -3,6 +3,7 @@ const route = express()
 const getNumber = require('./getNumber')
 const shortURL = require('../../models/short_url')
 
+
 //setting new page
 route.get('/:RanderNumber/new', (req, res) => {
   let RanderNumber = req.params.RanderNumber
@@ -28,8 +29,10 @@ route.post('/', (req, res) => {
         return list.originalURL.includes(originalURL)
       })
       if (shorturl) {
+        // if same URL redirect same short url
         res.redirect(`/enginejack/${shorturl.RanderNumber}/new`)
       } else {
+        // if new URL create new url
         shortURL.create({ RanderNumber, originalURL }).then(() => res.redirect(`/enginejack/${RanderNumber}/new`))
       }
     })
